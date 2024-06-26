@@ -7,13 +7,11 @@ import {Request, Response} from 'express';
 import path from "path";
 import formData from 'express-form-data';
 import responder from './Middlewares/responder';
-// import dbMysql from './Config/databaseMysql'
 import MercadoPago_Router from './Componentes/MercadoPago/MercadoPago_Router';
 ///// VARIABLES DE ENTORNO
 process.env.NODE_ENV = process.env.NODE_ENV || 'desarrollo';
 class Server{
     public app: express.Application;
-    private _cadenaDeConexion = process.env.DATABASE || 'mongodb://localhost:29017/BDCastastro';
     private options = {
       uploadDir: 'public/archivos/',
       autoClean: true,
